@@ -1,0 +1,174 @@
+AI-Based Real-Time Efficiency Classification in Smart Manufacturing Using Sensor and 6G Network Data
+Abstract
+
+The rise of smart manufacturing and Industry 4.0 has led to the generation of large-scale machine and network data. However, real-time monitoring and interpretation of manufacturing efficiency remain a significant challenge. This study presents an AI-driven framework that classifies machine efficiency into High, Medium, and Low categories using sensor data, production metrics, and 6G network parameters. Machine learning models including Logistic Regression, Random Forest, and Gradient Boosting are implemented and evaluated. The system also integrates explainability techniques and a Streamlit-based dashboard for real-time decision support. Results demonstrate that ensemble models significantly improve prediction accuracy and operational insights, enabling proactive and intelligent manufacturing systems.
+
+1. Introduction
+
+Modern manufacturing environments rely heavily on interconnected systems and real-time data streams. Despite technological advancements, industries still face:
+
+Delayed identification of performance degradation
+Complex interpretation of multiple sensor metrics
+Lack of automated and explainable efficiency evaluation systems
+
+These challenges result in:
+
+Increased downtime
+Reduced production efficiency
+Higher operational costs
+
+This research proposes an AI-based classification model to automatically evaluate machine efficiency using multi-dimensional data sources, including sensor readings, quality metrics, and 6G network performance indicators.
+
+2. Literature Review
+
+Traditional manufacturing systems primarily rely on rule-based monitoring and manual inspection. Recent advancements include:
+
+Machine Learning in Manufacturing: Used for predictive maintenance and anomaly detection
+IoT-based Monitoring Systems: Enable real-time data collection
+Explainable AI (XAI): Improves transparency in industrial decision-making
+
+However, limited work has been done in:
+
+Integrating network-level metrics (e.g., latency, packet loss)
+Providing real-time classification with interpretability
+
+This study bridges these gaps by combining ML models with explainable insights and real-time dashboards.
+
+3. Dataset Description
+
+The dataset consists of time-series industrial machine data with the following features:
+
+Operational Data: Temperature, vibration, power consumption
+Network Data: Latency, packet loss
+Production Metrics: Speed, defect rate
+Maintenance Indicators: Predictive maintenance score
+Target Variable: Efficiency_Status (High, Medium, Low)
+
+4. Methodology
+
+4.1 Data Preprocessing
+Combined Date and Time into a unified timestamp
+Sorted data chronologically
+Handled missing values using imputation techniques
+Encoded categorical variables using Label Encoding
+Standardized numerical features using StandardScaler
+Checked class imbalance and applied resampling if required
+
+4.2 Feature Engineering
+
+To enhance model performance, the following features were derived:
+
+Sensor Stability Index
+Measures fluctuations in temperature and vibration
+
+Energy Efficiency Ratio
+
+Production Speed/Power Consumption
+
+Error-to-Output Ratio
+
+Error Rate/Production Speed
+
+Network Reliability Score
+Based on latency and packet loss
+
+These features improved both predictive accuracy and interpretability.
+
+4.3 Model Development
+Baseline Model
+Logistic Regression (multi-class classification)
+Advanced Models
+Random Forest Classifier
+Gradient Boosting (XGBoost)
+Evaluation Metrics
+Accuracy
+Precision, Recall, F1-score
+Confusion Matrix
+Cross-validation
+
+5. Results and Analysis
+
+5.1 Model Performance
+Gradient Boosting achieved the highest accuracy
+Random Forest provided balanced performance and stability
+
+5.2 Key Findings
+High error rate strongly correlates with low efficiency
+Increased network latency and packet loss negatively impact performance
+High predictive maintenance scores indicate better efficiency
+Energy efficiency ratio is a major determinant of performance
+
+6. Explainability and Interpretability
+
+To enhance trust and usability:
+
+Feature importance analysis was performed
+Model explanations highlight:
+Why efficiency dropped
+Key contributing factors
+
+Top Influencing Features
+
+Error Rate (%)
+Production Speed
+Power Consumption
+Network Latency
+Defect Rate
+
+Explainability ensures that engineers can take actionable decisions rather than relying on black-box predictions.
+
+7. System Deployment
+
+A Streamlit-based dashboard was developed with the following modules:
+
+7.1 Efficiency Prediction Dashboard
+Real-time classification
+Confidence score display
+
+7.2 Machine-Level Insights
+Historical efficiency trends
+Machine-wise analysis
+
+7.3 Explainability Panel
+Feature importance visualization
+Root-cause analysis
+
+7.4 Operational Monitoring
+Efficiency comparison across operation modes
+Network vs sensor impact analysis
+
+8. Key Performance Indicators (KPIs)
+KPI	Description
+Efficiency Class	High / Medium / Low
+Prediction Confidence	Model certainty
+Feature Contribution	Influencing factors
+Machine Efficiency Profile	Trend analysis
+
+9. Discussion
+
+The proposed system:
+
+Reduces dependency on manual monitoring
+Enables proactive maintenance
+Improves production efficiency
+Limitations
+Data quality and noise
+Model dependency on historical data
+Trade-off between accuracy and interpretability
+
+10. Conclusion
+
+This study presents an AI-driven solution for real-time efficiency classification in manufacturing systems. By leveraging sensor, production, and network data, the model enables:
+
+Real-time monitoring
+Predictive decision-making
+Explainable insights
+
+The integration of machine learning and dashboard visualization makes this system a foundational component of smart and autonomous factories.
+
+11. Future Work
+Integration with IoT edge devices
+Real-time anomaly detection
+Reinforcement learning for automated control
+Large-scale industrial deployment
+
