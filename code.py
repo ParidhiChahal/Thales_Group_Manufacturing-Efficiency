@@ -18,9 +18,12 @@ def load_data():
     # Debug (remove later)
     st.write(df.columns)
     
-    # Safe datetime creation
-    if 'Date' in df.columns and 'Time' in df.columns:
-        df['Datetime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])
+    # Clean column names
+df.columns = df.columns.str.strip().str.replace(" ", "_").str.lower()
+
+# Use lowercase names
+if 'date' in df.columns and 'time' in df.columns:
+    df['Datetime'] = pd.to_datetime(df['date'] + ' ' + df['time'])
     
     return df
 
