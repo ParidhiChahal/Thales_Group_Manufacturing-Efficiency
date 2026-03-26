@@ -11,12 +11,16 @@ st.set_page_config(page_title="AI Manufacturing Dashboard", layout="wide")
 @st.cache_data
 def load_data():
     df = pd.read_csv('Thales_Group_Manufacturing.csv')
+    
+    df.columns = df.columns.str.strip()
+    
+    st.write(df.columns)
+    
     df['Datetime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])
+    
     return df
 
-df = load_data()
-
-st.title("🏭 AI-Powered Manufacturing Efficiency Dashboard")
+st.title("AI-Powered Manufacturing Efficiency Dashboard")
 
 # Sidebar filters
 st.sidebar.header("Filters")
