@@ -20,6 +20,8 @@ def load_data():
     
     return df
 
+df = load_data()
+
 st.title("AI-Powered Manufacturing Efficiency Dashboard")
 
 # Sidebar filters
