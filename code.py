@@ -12,11 +12,15 @@ st.set_page_config(page_title="AI Manufacturing Dashboard", layout="wide")
 def load_data():
     df = pd.read_csv('Thales_Group_Manufacturing.csv')
     
-    df.columns = df.columns.str.strip()
+    # Clean columns
+    df.columns = df.columns.str.strip().str.replace(" ", "_")
     
+    # Debug (remove later)
     st.write(df.columns)
     
-    df['Datetime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])
+    # Safe datetime creation
+    if 'Date' in df.columns and 'Time' in df.columns:
+        df['Datetime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])
     
     return df
 
