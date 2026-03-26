@@ -12,12 +12,6 @@ st.set_page_config(page_title="AI Manufacturing Dashboard", layout="wide")
 def load_data():
     df = pd.read_csv('Thales_Group_Manufacturing.csv')
     
-    # Clean columns
-    df.columns = df.columns.str.strip().str.replace(" ", "_")
-    
-    # Debug (remove later)
-    st.write(df.columns)
-    
     # Clean column names
 df.columns = df.columns.str.strip().str.replace(" ", "_").str.lower()
 
